@@ -4,6 +4,16 @@ function setup() {
 }
 
 function draw(){
+	noStroke();
+	fill(255,255,0);
+	ellipse(mouseX,mouseY, 25,25)
+	if (mouseIsPressed) {
+        strokeWeight(5);
+        point(mouseX, mouseY);
+        fill(0, 0, 0);
+        textSize(12);
+        text(mouseX + " " +"," + " "+ mouseY, mouseX-26,mouseY-10);        
+    }
 	
 	//stripe1
 	fill(224,22,43)
