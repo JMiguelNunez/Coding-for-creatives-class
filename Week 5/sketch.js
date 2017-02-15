@@ -19,6 +19,9 @@ function draw() {
 function mousePressed() {
   d = d + 10;
 }
+function mouseReleased(){
+  d=d-10;
+}
 
 
 function setup() {
@@ -30,7 +33,7 @@ function setup() {
 function draw() {
 
   //distance from center of the screen
-  var d = dist(windowWidth/2, windowHeight/2, mouseX, mouseY);
+  //var d = dist(windowWidth/2, windowHeight/2, mouseX, mouseY);
 
     fill (mouseX, mouseY, random(1, 255));
     ellipse (x, y, d, d);
