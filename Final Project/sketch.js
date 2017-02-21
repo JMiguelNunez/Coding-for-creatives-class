@@ -17,6 +17,7 @@ function setup() {
 }
 var draw = function() {
     background(0);
+    fill(255,255,0);
     ellipse(ballX,ballY, 20, 20);
     ballX += ballSpeedX;
     ballY += ballSpeedY;
@@ -37,7 +38,8 @@ var draw = function() {
                 ballSpeedY *= -1;
             }
         } 
-        if(brick2===true){
+        if(brick1===true){
+            fill(0,255,0);
             rect(0,0,100, 40);
         }
     }
@@ -51,6 +53,7 @@ var draw = function() {
             }
         } 
         if(brick2===true){
+            fill(0,255,0);
             rect(100,0,100, 40);
         }
     }
@@ -63,6 +66,7 @@ var draw = function() {
             }
         } 
         if(brick3===true){
+            fill(0,255,0);
             rect(200,0,100, 40);
         }
     }
@@ -75,6 +79,7 @@ var draw = function() {
             }
         } 
         if(brick4===true){
+            fill(0,255,0);
             rect(300,0,100, 40);
         }
     }
@@ -86,6 +91,7 @@ var draw = function() {
             }
         } 
         if(brick5===true){
+            fill(0,255,0);
             rect(400,0,100, 40);
         }
     }if(brick6===true){
@@ -96,6 +102,7 @@ var draw = function() {
             }
         } 
         if(brick6===true){
+            fill(0,255,0);
             rect(500,0,100, 40);
         }
     }if(brick7===true){
@@ -106,24 +113,26 @@ var draw = function() {
             }
         } 
         if(brick7===true){
+            fill(0,255,0);
             rect(600,0,100, 40);
         }
     }if(brick8===true){
         if(ballY-ballR<40);{
-            if(ballX+ballR>=0 && ballX-ballR<=100){
+            if(ballY+ballR>=40 && ballY-ballR<=80)
+             if(ballX+ballR>=0 && ballX-ballR<=40){
                 brick8=false;
                 ballSpeedY *= -1;
             }
         }
     }
         if(brick8==true){
+            fill(0,0,255);
             rect(0,40,100,40)
         }
     
     //draw paddle
-
-    rect(mouseX-50, windowHeight-50, 100,20);
     fill(255,0,0);
+    rect(mouseX-50, windowHeight-50, 100,20);
     if(ballX+ballR > mouseX-100 && ballX-ballR < mouseX + 100 && ballY+ballR > 370){
         ballSpeedY *= -1;
     }
