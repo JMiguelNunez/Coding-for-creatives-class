@@ -10,6 +10,14 @@ var brick9=true;
 var brick10=true;
 var brick11=true;
 var brick12=true; 
+var brick13=true;
+var brick14=true;
+var brick15=true;
+var brick16=true;
+var brick17=true;
+var brick18=true;
+
+
 var paddleWidth = 100;
 var paddleX;
 var paddleY;
@@ -31,10 +39,14 @@ var img;
 
 var lives = 3;
 
+var myFont;
+
 // true if ball is moving, false if ball is attached to paddle
 var ballMoving = false;
 function preload(){
-    img=loadImage('Media/heart.png')
+    img=loadImage('Media/heart.png');
+    myFont=loadFont("Media/LLPIXEL3.ttf");
+
 }
 function setup() {
   createCanvas(600, windowHeight);
@@ -88,11 +100,15 @@ var draw = function() {
     //ball respawn
     if (ballY >= windowHeight-10) {
         ballMoving = false;
-        lives=i-1;
+        lives=lives-1;
     }
-    if (ballY>=windowHeight-10 && lives=0){
-        textSize(100);
-        text("GAME OVER!", windowWidth/2, windowHeight/2)
+    if (ballY>=windowHeight-10 && lives== -1){
+    //if(ballMoving=true)
+        noLoop();
+        textSize(50);
+        textFont(myFont);
+        fill(255,0,0);
+        text("Game Over!", 160, windowHeight/2);
     }
     //ball hits the brick 
     if(brick1===true){
@@ -214,6 +230,121 @@ var draw = function() {
             fill(0,0,255);
             rect(300,70,100, 40);
         }
+    }
+    if(brick11===true){
+        if(ballY< 109){
+            if(ballX >= 400 && ballX <= 500){
+                brick11=false;
+                ballSpeedY *= -1;
+            }
+        } 
+        if(brick11===true){
+            fill(0,0,255);
+            rect(400,70,100, 40);
+        }
+    }
+    if(brick12===true){
+        if(ballY< 109){
+            if(ballX >= 500 && ballX <= 600){
+                brick12=false;
+                ballSpeedY *= -1;
+            }
+        } 
+        if(brick12===true){
+            fill(0,0,255);
+            rect(500,70,100, 40);
+        }
+
+    }
+    if(brick13===true){
+        if(ballY< 149){
+            if(ballX >= 0 && ballX <= 100){
+                brick13=false;
+                ballSpeedY *= -1;
+            }
+        } 
+        if(brick13===true){
+            fill(255,0,0);
+            rect(0,110,100, 40);
+        }
+
+    }
+    if(brick14===true){
+        if(ballY< 149){
+            if(ballX >= 100 && ballX <= 200){
+                brick14=false;
+                ballSpeedY *= -1;
+            }
+        } 
+        if(brick14===true){
+            fill(255,0,0);
+            rect(100,110,100, 40);
+        }
+
+    }
+    if(brick15===true){
+        if(ballY< 149){
+            if(ballX >= 200 && ballX <= 300){
+                brick15=false;
+                ballSpeedY *= -1;
+            }
+        } 
+        if(brick15===true){
+            fill(255,0,0);
+            rect(200,110,100, 40);
+        }
+
+    }
+    if(brick16===true){
+        if(ballY< 149){
+            if(ballX >= 300 && ballX <= 400){
+                brick16=false;
+                ballSpeedY *= -1;
+            }
+        } 
+        if(brick16===true){
+            fill(255,0,0);
+            rect(300,110,100, 40);
+        }
+
+    }
+    if(brick17===true){
+        if(ballY< 149){
+            if(ballX >= 400 && ballX <= 500){
+                brick17=false;
+                ballSpeedY *= -1;
+            }
+        } 
+        if(brick17===true){
+            fill(255,0,0);
+            rect(400,110,100, 40);
+        }
+
+    }
+    if(brick18===true){
+        if(ballY< 149){
+            if(ballX >= 500 && ballX <= 600){
+                brick18=false;
+                ballSpeedY *= -1;
+            }
+        } 
+        if(brick18===true){
+            fill(255,0,0);
+            rect(500,110,100, 40);
+        }
+
+    }
+
+
+
+    if(brick1==false && brick2==false && brick3==false && brick4==false && brick5==false && brick6==false && brick7==false && brick8==false && brick9==false && brick10==false && brick11==false && brick12==false && brick13==false && brick14==false && brick15==false && brick16==false && brick17==false && brick18==false ){
+      //if(ballMoving=true){
+        noLoop();
+        textSize(50);
+        textFont(myFont);
+        fill(255,0,0);
+        text("YOU WON!", 170, windowHeight/2);
+
     }
 
 }
